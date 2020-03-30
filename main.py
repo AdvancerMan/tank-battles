@@ -32,7 +32,7 @@
 try:
     from traceback import format_exc
     from random import randrange
-    from time import clock as time_clock
+    from time import process_time as time_process_time
     from pygame import \
         Surface as pg_Surface,\
         init as pg_init, \
@@ -322,7 +322,7 @@ def main():
         cl.tick(CONFIG['FPS_LIMIT'])
         fps_now = cl.get_fps()
 
-        globaltime = time_clock()
+        globaltime = time_process_time()
 
         " Блок обновления событий "
 

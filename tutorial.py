@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from time import clock as time_clock
+from time import process_time as time_process_time
 from pygame import \
     Surface as pg_Surface
 from pygame import QUIT, \
@@ -72,7 +72,7 @@ def tutorial(window, level, clock):
         tutor_screen.fill(BLACK)
 
         if 0 <= stage <= 7 or stage > 10:
-            level.draw(tutor_screen, 0, 0, time_clock())
+            level.draw(tutor_screen, 0, 0, time_process_time())
         elif stage == 10 or stage == 8:
             tutor_screen.blit(base_main_screen, (0, 0))
         elif stage == 9:

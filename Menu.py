@@ -1,7 +1,7 @@
 ﻿# coding: utf-8
 
 from re import findall
-from time import clock as time_clock
+from time import process_time as time_process_time
 from pygame import \
     Surface as pg_Surface, \
     error as pg_error
@@ -1106,16 +1106,16 @@ def win_screen_func(window, clock):
     win_screen_init(window)
     global win_screen
 
-    cl = time_clock()
+    cl = time_process_time()
     x = FPSForPics(10, len(win_screen))
     font = pg_font_SysFont('Impact', 55)
     text = font.render('Этот бой был долгим, но вы сражались достойно!', 1, WHITE)
     text = pg_transform_scale(text, (int(text.get_size()[0] / 1280 * CONFIG['RESOLUTION'][0]),
                                      int(text.get_size()[1] / 720 * CONFIG['RESOLUTION'][1])))
     txt_pos = (CONFIG['RESOLUTION'][0] // 2 - text.get_size()[0] // 2, int(0.03472 * CONFIG['RESOLUTION'][1]))
-    while time_clock() - 5 <= cl:
+    while time_process_time() - 5 <= cl:
         clock.tick(CONFIG['FPS_LIMIT'])
-        window.blit(win_screen[x.frame(time_clock())], (0, 0))
+        window.blit(win_screen[x.frame(time_process_time())], (0, 0))
         window.blit(text, txt_pos)
         pg_display_flip()
 
@@ -1127,7 +1127,7 @@ def win_screen_func(window, clock):
                 del win_screen
                 return main_menu(False, window, clock)
         clock.tick(CONFIG['FPS_LIMIT'])
-        window.blit(win_screen[x.frame(time_clock())], (0, 0))
+        window.blit(win_screen[x.frame(time_process_time())], (0, 0))
         window.blit(text, txt_pos)
         pg_display_flip()
 
