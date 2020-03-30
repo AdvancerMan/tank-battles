@@ -82,8 +82,8 @@ try:
     from constants import BLACK, \
         WHITE, STANDARD_CONTROLS, \
         RIGHT, LEFT, DOWN, UP
-except ImportError:
-    with open('importLog.txt', 'w', encoding='utf-8-sig') as f:
+except:
+    with open('log.txt', 'w', encoding='utf-8-sig') as f:
         try:
             from traceback import format_exc
             f.write(format_exc())
