@@ -5,6 +5,6 @@ Authors
     
     Programmer
 
-* __Nikolay Lavrentyev__
+* __[Lavrentyev Nikolay](https://vk.com/ulanlavr)__
 
     Artist
