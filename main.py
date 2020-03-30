@@ -29,59 +29,67 @@
 артиллерия
 зенитка
 """
-from traceback import format_exc
-from random import randrange
-from time import clock as time_clock
-from pygame import \
-    Surface as pg_Surface,\
-    init as pg_init, \
-    quit as pg_quit
-from pygame import KEYDOWN, \
-    K_ESCAPE, K_TAB, QUIT, \
-    FULLSCREEN, MOUSEMOTION, \
-    MOUSEBUTTONDOWN
-from pygame.mixer_music import \
-    load as pg_mixer_music_load, \
-    play as pg_mixer_music_play, \
-    pause as pg_mixer_music_pause, \
-    unpause as pg_mixer_music_unpause, \
-    set_volume as pg_mixer_music_set_volume
-from pygame.mixer import \
-    init as pg_mixer_init, \
-    Sound as pg_mixer_Sound
-from pygame.mouse import \
-    get_pos as pg_mouse_get_pos
-from pygame.transform import \
-    scale as pg_transform_scale
-from pygame.font import \
-    init as pg_font_init, \
-    SysFont as pg_font_SysFont, \
-    quit as pg_font_quit
-from pygame.time import \
-    Clock as pg_time_Clock
-from pygame.display import \
-    set_mode as pg_display_set_mode, \
-    set_caption as pg_display_set_caption, \
-    flip as pg_display_flip
-from pygame.event import \
-    get as pg_event_get
-from config import CONFIG
-from Menu import loading_screen_init, \
-    loading_screen, main_menu, \
-    win_screen_func
-from game_obj import init_objs_png, \
-    Player, TanksError, Base, \
-    Bullet, Dirt, Mine, \
-    load_img, MiniMenu, \
-    objs_crossed, Artillery, \
-    AntiArtGun, SkillsLine, \
-    BlockUnD, BlockD
-from Base_menu import \
-    open_base, base_init
-from constants import BLACK, \
-    WHITE, STANDARD_CONTROLS, \
-    RIGHT, LEFT, DOWN, UP
-
+try:
+    from traceback import format_exc
+    from random import randrange
+    from time import clock as time_clock
+    from pygame import \
+        Surface as pg_Surface,\
+        init as pg_init, \
+        quit as pg_quit
+    from pygame import KEYDOWN, \
+        K_ESCAPE, K_TAB, QUIT, \
+        FULLSCREEN, MOUSEMOTION, \
+        MOUSEBUTTONDOWN
+    from pygame.mixer_music import \
+        load as pg_mixer_music_load, \
+        play as pg_mixer_music_play, \
+        pause as pg_mixer_music_pause, \
+        unpause as pg_mixer_music_unpause, \
+        set_volume as pg_mixer_music_set_volume
+    from pygame.mixer import \
+        init as pg_mixer_init, \
+        Sound as pg_mixer_Sound
+    from pygame.mouse import \
+        get_pos as pg_mouse_get_pos
+    from pygame.transform import \
+        scale as pg_transform_scale
+    from pygame.font import \
+        init as pg_font_init, \
+        SysFont as pg_font_SysFont, \
+        quit as pg_font_quit
+    from pygame.time import \
+        Clock as pg_time_Clock
+    from pygame.display import \
+        set_mode as pg_display_set_mode, \
+        set_caption as pg_display_set_caption, \
+        flip as pg_display_flip
+    from pygame.event import \
+        get as pg_event_get
+    from config import CONFIG
+    from Menu import loading_screen_init, \
+        loading_screen, main_menu, \
+        win_screen_func
+    from game_obj import init_objs_png, \
+        Player, TanksError, Base, \
+        Bullet, Dirt, Mine, \
+        load_img, MiniMenu, \
+        objs_crossed, Artillery, \
+        AntiArtGun, SkillsLine, \
+        BlockUnD, BlockD
+    from Base_menu import \
+        open_base, base_init
+    from constants import BLACK, \
+        WHITE, STANDARD_CONTROLS, \
+        RIGHT, LEFT, DOWN, UP
+except ImportError:
+    with open('importLog.txt', 'w', encoding='utf-8-sig') as f:
+        try:
+            from traceback import format_exc
+            f.write(format_exc())
+        except ImportError:
+            f.write("Can't import traceback module")
+    exit(1)
 
 def main():
     # Инициализация PyGame
@@ -683,6 +691,6 @@ def main():
 if __name__ == '__main__':
     try:
         main()
-    except Exception:
+    except:
         with open('log.txt', 'w', encoding='utf-8-sig') as f:
             f.write(format_exc())
