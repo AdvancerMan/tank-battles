@@ -1,0 +1,2 @@
+bullet_damage 75
+cost 300

@@ -1,0 +1,2 @@
+tank_health 200
+cost 400

@@ -1,0 +1,4 @@
+bullet_damage 75
+cost 400
+tank_speed -1
+tank_health 275

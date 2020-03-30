@@ -1,0 +1,4 @@
+4 left 6
+5 right 5
+3 left 3
+2 left 1 

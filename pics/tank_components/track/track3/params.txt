@@ -1,0 +1,2 @@
+tank_speed 4
+cost 400 
