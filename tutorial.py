@@ -24,7 +24,7 @@ from config import CONFIG
 
 def tutorial(window, level, clock):
     from Base_menu import base_main_screen, body_base_screen
-    pg_mixer_music_load('music/ingame_music.mp3')
+    pg_mixer_music_load('music/ingame_music.wav')
     pg_mixer_music_play(-1)
 
     tutor_screen = pg_Surface(CONFIG['RESOLUTION'])

@@ -73,7 +73,7 @@ def load_img(path, params=(CONFIG['OBJ_WIDTH'], CONFIG['OBJ_HEIGHT']),
         img = pg_image_load(path)
         if change_size:
             img = pg_transform_scale(img, params)
-    except pg_error:
+    except:
         if raise_error:
             raise pg_error
         img = pg_Surface(params)

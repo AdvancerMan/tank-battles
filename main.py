@@ -120,7 +120,7 @@ def main():
     red_field = load_img('pics/misc/red_field.png')
     green_field = load_img('pics/misc/green_field.png')
     base_init()
-    pg_mixer_music_load('music/menu_music.mp3')
+    pg_mixer_music_load('music/menu_music.wav')
     pg_mixer_music_play(-1)
     pg_mixer_music_set_volume(CONFIG['MUSIC_VOLUME'] / 1000 * int(CONFIG['MUSIC_ON']))
 
@@ -133,7 +133,7 @@ def main():
     " Характерные для каждого уровня значения "
     if game_on:
         screen = pg_Surface(level.size)
-        pg_mixer_music_load('music/ingame_music.mp3')
+        pg_mixer_music_load('music/ingame_music.wav')
         pg_mixer_music_play(-1)
         pg_mixer_music_set_volume(CONFIG['MUSIC_VOLUME']/ 1000 * int(CONFIG['MUSIC_ON']))
         all_objs_on_level = {}
@@ -175,11 +175,11 @@ def main():
                 # Нажатие на клавишу Escape
                 if event.key == K_ESCAPE:
                     # Открытие меню
-                    pg_mixer_music_load('music/menu_music.mp3')
+                    pg_mixer_music_load('music/menu_music.wav')
                     pg_mixer_music_play(-1)
                     pg_mixer_music_set_volume(CONFIG['MUSIC_VOLUME'] / 1000 * int(CONFIG['MUSIC_ON']))
                     game_on, new_lvl, window = main_menu(True, window, cl)
-                    pg_mixer_music_load('music/ingame_music.mp3')
+                    pg_mixer_music_load('music/ingame_music.wav')
                     pg_mixer_music_play(-1)
                     pg_mixer_music_set_volume(CONFIG['MUSIC_VOLUME'] / 1000 * int(CONFIG['MUSIC_ON']))
                     # Если начата новая игра
@@ -575,13 +575,13 @@ def main():
         # Если на карте осталась 1 база
         if len(list(players.keys())) == 1:
             # Открытие меню и победного окна
-            pg_mixer_music_load('music/menu_music.mp3')
+            pg_mixer_music_load('music/menu_music.wav')
             pg_mixer_music_play(-1)
             pg_mixer_music_set_volume(CONFIG['MUSIC_VOLUME'] / 1000 * int(CONFIG['MUSIC_ON']))
             game_on, new_lvl, window = win_screen_func(window, cl)
             # Если начата новая игра
             if new_lvl is not None:
-                pg_mixer_music_load('music/ingame_music.mp3')
+                pg_mixer_music_load('music/ingame_music.wav')
                 pg_mixer_music_play(-1)
                 pg_mixer_music_set_volume(CONFIG['MUSIC_VOLUME'] / 1000 * int(CONFIG['MUSIC_ON']))
                 level = new_lvl

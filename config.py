@@ -19,7 +19,7 @@ CONFIG = {
     'TANKS_SPEED': 5,
     'START_MINE_MONEY': 100,
     'MUSIC_ON': True,
-    'FULLSCREEN_ON': True,
+    'FULLSCREEN_ON': False,
     'MINE_MONEY_PER_TURN_FROM': 0,
     'CONTROLS': {1: {'base': 101, 'up': 119, 'shoot': 113, 'turn_end': 13, 'down': 115, 'right': 100, 'left': 97}, 2: {'base': 101, 'up': 119, 'shoot': 113, 'turn_end': 13, 'down': 115, 'right': 100, 'left': 97}, 3: {'base': 101, 'up': 119, 'shoot': 113, 'turn_end': 13, 'down': 115, 'right': 100, 'left': 97}},
     'SKILLS_LINE_SPEED': 20,
